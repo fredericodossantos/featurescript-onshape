@@ -204,6 +204,7 @@ const MARGEM = 1;   // quanto o cilindro de corte estoura a parede que atravessa
 const NEMA17_FLANGE = 42.3;     // face do motor (quadrada)
 const NEMA17_PCD = 31;          // distancia entre os 4 furos M3, em quadrado
 const NEMA17_FURO = 3.4;        // passagem para M3 no suporte
+const NEMA17_CABECA = 5.5;      // cabeca do M3 cilindrico (ISO 4762) que prende o motor
 const NEMA17_BOSS = 25;         // folga p/ o ressalto (22) COM barriga de impressao
 const CASTANHA_BOSS = 10.2;     // diametro do corpo da castanha T8
 const CASTANHA_PCD = 16;        // circulo dos 4 furos da castanha
@@ -212,6 +213,9 @@ const ROL608_OD = 22.1;         // 608ZZ: externo 22 + 0,1 de ajuste
 const ROL608_W = 7;             // 608ZZ: largura
 const ROL608_ENCOSTO = 16;      // furo de encosto atras do rolamento
 const PE_MOTOR = 25;            // comprimento do pe do suporte do motor
+const PE_MOTOR_ALTURA = 5;      // espessura do pe do suporte do motor
+const PE_MOTOR_FURO_Y = 7.5;    // furos do pe em Y=+-7,5: fora dos canais dos parafusos do motor
+const FOLGA_CABECA = 0.5;       // folga radial em volta da cabeca do parafuso no canal
 const PE_MANCAL_FUSO = 20;      // comprimento do pe do mancal da ponta
 
 // Furo de rosca M4 direto no plastico, fixo (nao depende do parametro
@@ -386,7 +390,40 @@ function construirSuporteMotor(context is Context, id is Id, d is map, c is map)
     // corpo dele desce ate Z=0: por isso o pe cresce para -X, senao o pe ficaria
     // debaixo do motor e nao deixaria ele assentar.
     var corpo = makeBlock(context, id + "parede", 0, -meia, 0, d.flangeEsp, meia, alturaParede);
-    var base = makeBlock(context, id + "pe", -pe, -meia, 0, 0 + MARGEM, meia, 5);
+    var base = makeBlock(context, id + "pe", -pe, -meia, 0, 0 + MARGEM, meia, PE_MOTOR_ALTURA);
+
+    // Os 2 parafusos de baixo do motor entram pelo lado -X e ficam quase rente
+    // ao pe (fusoZ 21 -> furo em Z 5,5). Um canal ao longo de X, no comprimento
+    // todo do pe, deixa passar parafuso, cabeca e chave. Vai do lado interno da
+    // cabeca ate a borda do pe (sem deixar tira fina pendurada na impressao
+    // deitada). E cortado so no pe, antes da uniao, e estoura as pontas dele:
+    // sem face coincidente com a parede, que continua inteira.
+    var zFuroBaixo = d.fusoZ - NEMA17_PCD / 2;
+    var meiaCanal = NEMA17_CABECA / 2 + FOLGA_CABECA;
+    var zFundoCanal = zFuroBaixo - meiaCanal;
+    if (zFundoCanal < PE_MOTOR_ALTURA)
+    {
+        if (zFundoCanal < 1)
+        {
+            throw regenError("Suporte do motor: com esse fusoZ o canal dos parafusos de baixo atravessa o pe. Aumente fusoZ.");
+        }
+        if (PE_MOTOR_FURO_Y + c.passagem > NEMA17_PCD / 2 - meiaCanal)
+        {
+            throw regenError("Suporte do motor: a cabeca do parafuso do pe invade o canal. Reduza PE_MOTOR_FURO_Y.");
+        }
+        var canais = [];
+        for (var sy in [-1, 1])
+        {
+            canais = append(canais, makeBlock(context, id + ("canal" ~ sy),
+                        -pe - MARGEM, sy * (NEMA17_PCD / 2 - meiaCanal), zFundoCanal,
+                        2 * MARGEM, sy * (meia + MARGEM), PE_MOTOR_ALTURA + MARGEM));
+        }
+        opBoolean(context, id + "canais", {
+                "targets" : base,
+                "tools" : qUnion(canais),
+                "operationType" : BooleanOperationType.SUBTRACTION
+        });
+    }
     combine(context, id + "uniao", corpo, [base], []);
 
     var cortes = [cylinderOnAxis(context, id + "boss", vector(d.flangeEsp / 2, 0, d.fusoZ), "X",
@@ -405,8 +442,8 @@ function construirSuporteMotor(context is Context, id is Id, d is map, c is map)
     for (var sy in [-1, 1])
     {
         cortes = append(cortes, cylinderOnAxis(context, id + ("peFuro" ~ sy),
-                    vector(-pe / 2, sy * (meia - 6), 2.5), "Z",
-                    c.passagem, 5 + 2 * MARGEM));
+                    vector(-pe / 2, sy * PE_MOTOR_FURO_Y, PE_MOTOR_ALTURA / 2), "Z",
+                    c.passagem, PE_MOTOR_ALTURA + 2 * MARGEM));
     }
 
     combine(context, id + "furos", corpo, [], cortes);
