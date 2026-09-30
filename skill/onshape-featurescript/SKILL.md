@@ -49,6 +49,14 @@ auxiliares comprovadas + feature minimo) e instancie com
   guarda morta.
 - Cada cota numa fonte so (funcao `cotas()`); pecas que se encaixam consomem
   o mesmo numero.
+- **Sem sujeira: apague o que nao e usado.** Const, function, enum, variavel,
+  parametro ou comentario de uma versao anterior (ex.: constantes da correia
+  depois que o eixo passou a fuso) sai do arquivo na mesma alteracao que o
+  tornou morto - apagar, nao comentar. O Onshape marca como "Unused
+  declaration" e o usuario nao quer nenhum warning. Rode
+  `python scripts/fs_unused.py arquivo.fs` antes de entregar; tem de dar 0.
+  Ele cobre so declaracoes de topo: variaveis locais e parametros sem uso
+  confira lendo o diff.
 
 ## API do Onshape - politica
 
@@ -73,6 +81,7 @@ auxiliares comprovadas + feature minimo) e instancie com
 | `onshape_build_into.py` | sobe o .fs num Feature Studio do documento existente, sincroniza a versao da std, instancia/atualiza o feature com `--params`, renderiza iso/top/front | ~8-10 chamadas |
 | `onshape_inspect.py` | lista elementos e mede cada corpo (bbox, volume, faces planas e cilindricas) no formato `B|C|P` | 1 + 1 por Part Studio |
 | `onshape_render.py` | re-renderiza Part Studio ou Assembly em varios angulos | 1 por vista |
+| `fs_unused.py` | lista const/function/enum de topo nunca usados (o "Unused declaration" do Onshape); rodar antes de entregar | 0 (local) |
 
 Uso tipico (regenerar pecas preservando a montagem):
 
@@ -106,6 +115,7 @@ linhas `B`.
 A definition declarada/usada - B mapa de cotas fechado - C Ids resolvem -
 D tabela de sobreposicao de todos os pares unidos - E auditoria dimensional
 com defaults - F scan ASCII - G grep de `throw regenError`, ternarios,
-unidades e queries. Falhou algum: escreva `NAO PRONTO` e qual item.
+unidades e queries - H `fs_unused.py` = 0 e nada morto no diff. Falhou algum:
+escreva `NAO PRONTO` e qual item.
 Sem API autorizada: entregue o arquivo e diga que a regeneracao nao foi
 verificada.

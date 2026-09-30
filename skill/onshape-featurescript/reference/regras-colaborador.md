@@ -108,10 +108,22 @@ funcional de referencia.
 
 ```featurescript
 if (condicaoIncoerente)
+{
     throw regenError("Explique o problema e diga qual parametro ajustar.");
+}
 ```
 
 Testar com os defaults e pelo menos um caso limite. Comentario nao e guarda.
+
+## 8b. Limpeza - nenhum warning
+
+O usuario nao aceita "Unused declaration" nem qualquer outro warning do Onshape.
+Toda const, function, enum, variavel local, parametro de precondition ou
+comentario que ficou sem uso (sobra de versao anterior, teste, alternativa
+abandonada) e APAGADO na mesma alteracao que o tornou morto. Nao comentar,
+nao deixar "para depois". Antes de entregar:
+`python scripts/fs_unused.py arquivo.fs` tem de dar 0 (cobre declaracoes de
+topo); variaveis locais e parametros sem uso, conferir no diff.
 
 ## 9. Formato de cada etapa
 
@@ -119,7 +131,8 @@ Testar com os defaults e pelo menos um caso limite. Comentario nao e guarda.
 - **Execucao:** arquivo e caminho, funcoes/Ids criados, booleanos, parametros.
 - **Verificacao:** A definition declarada/usada; B mapa de cotas fechado; C Ids
   resolvem; D tabela de sobreposicao; E auditoria dimensional com defaults;
-  F scan ASCII; G grep de `throw regenError`, ternarios, unidades e queries.
+  F scan ASCII; G grep de `throw regenError`, ternarios, unidades e queries;
+  H `fs_unused.py` = 0 e nada morto no diff (secao 8b).
 
 Falhou algo: `NAO PRONTO` + o item. Nunca "deve funcionar", "parece correto",
 "provavelmente compila".

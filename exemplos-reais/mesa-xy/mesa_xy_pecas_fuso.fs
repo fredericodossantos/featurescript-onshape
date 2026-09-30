@@ -213,14 +213,6 @@ const ROL608_W = 7;             // 608ZZ: largura
 const ROL608_ENCOSTO = 16;      // furo de encosto atras do rolamento
 const PE_MOTOR = 25;            // comprimento do pe do suporte do motor
 const PE_MANCAL_FUSO = 20;      // comprimento do pe do mancal da ponta
-// Correia GT2 do kit: polia de 20 dentes, correia de 6 mm.
-const GT2_DP = 12.73;           // diametro primitivo da polia 20d (20*2/pi)
-const GT2_ALTURA = 16;          // altura da polia com as duas flanges
-const GT2_EIXO = 5.3;           // furo para o parafuso M5 que faz de eixo
-const CORREIA_LARG = 6;         // largura da correia
-const CORREIA_ESP = 1.5;        // espessura da correia com dente
-const NEMA17_ENCAIXE = 38;      // furo no MDF onde o motor do Y desce
-const NEMA17_EIXO_UTIL = 23.5;  // eixo do motor: define a altura da polia
 
 // Furo de rosca M4 direto no plastico, fixo (nao depende do parametro
 // "parafuso" geral): fixacao do suporte do motor Y (peca 10) no mancal 04.

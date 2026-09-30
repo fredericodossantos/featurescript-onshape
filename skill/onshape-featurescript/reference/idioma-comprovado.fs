@@ -109,14 +109,6 @@ function nomear(context is Context, body is Query, label is string, cor is Color
     });
 }
 
-function moveBody(context is Context, id is Id, body is Query, dx is number, dy is number, dz is number)
-{
-    opTransform(context, id, {
-            "bodies" : body,
-            "transform" : transform(vector(dx, dy, dz) * millimeter)
-    });
-}
-
 // -------------------- cotas: FONTE UNICA --------------------
 
 function diaPassagem(p is ParafusoExemplo) returns number
