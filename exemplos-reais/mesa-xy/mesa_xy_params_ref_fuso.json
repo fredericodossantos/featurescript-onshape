@@ -1,0 +1,263 @@
+[
+ {
+  "id": "parafuso",
+  "type": "enum",
+  "value": "M4",
+  "enumName": "ParafusoMesaXy"
+ },
+ {
+  "id": "eixoD",
+  "type": "length",
+  "value": "8 mm"
+ },
+ {
+  "id": "folgaEixoFixo",
+  "type": "length",
+  "value": "0.1 mm"
+ },
+ {
+  "id": "lmD",
+  "type": "length",
+  "value": "15 mm"
+ },
+ {
+  "id": "lmL",
+  "type": "length",
+  "value": "24 mm"
+ },
+ {
+  "id": "folgaLm",
+  "type": "length",
+  "value": "0.1 mm"
+ },
+ {
+  "id": "lmGap",
+  "type": "length",
+  "value": "2 mm"
+ },
+ {
+  "id": "qtdLm",
+  "type": "int",
+  "value": "2"
+ },
+ {
+  "id": "parede",
+  "type": "length",
+  "value": "3 mm"
+ },
+ {
+  "id": "espacoX",
+  "type": "length",
+  "value": "120 mm"
+ },
+ {
+  "id": "espacoY",
+  "type": "length",
+  "value": "100 mm"
+ },
+ {
+  "id": "alturaEixoX",
+  "type": "length",
+  "value": "20 mm"
+ },
+ {
+  "id": "placaEsp",
+  "type": "length",
+  "value": "8 mm"
+ },
+ {
+  "id": "furoMesaOffset",
+  "type": "length",
+  "value": "30 mm"
+ },
+ {
+  "id": "folgaMesa",
+  "type": "length",
+  "value": "9 mm"
+ },
+ {
+  "id": "gapAperto",
+  "type": "length",
+  "value": "0.4 mm"
+ },
+ {
+  "id": "padY",
+  "type": "length",
+  "value": "16 mm"
+ },
+ {
+  "id": "espacoLayout",
+  "type": "length",
+  "value": "20 mm"
+ },
+ {
+  "id": "travaSetScrew",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazCarro",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazSuporte",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazMancalBase",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazMancalMesa",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fusoY",
+  "type": "length",
+  "value": "90 mm"
+ },
+ {
+  "id": "fusoZ",
+  "type": "length",
+  "value": "21 mm"
+ },
+ {
+  "id": "fusoYX",
+  "type": "length",
+  "value": "0 mm"
+ },
+ {
+  "id": "fusoYZ",
+  "type": "length",
+  "value": "47.5 mm"
+ },
+ {
+  "id": "fusoYPonta",
+  "type": "length",
+  "value": "-219 mm"
+ },
+ {
+  "id": "fusoYComp",
+  "type": "length",
+  "value": "300 mm"
+ },
+ {
+  "id": "flangeEsp",
+  "type": "length",
+  "value": "6 mm"
+ },
+ {
+  "id": "fazCarroFuso",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazSuporteMotor",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazMancalFuso",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazSuporteMotorY",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "fazMancalFusoY",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "mesaX",
+  "type": "length",
+  "value": "300 mm"
+ },
+ {
+  "id": "mesaY",
+  "type": "length",
+  "value": "410 mm"
+ },
+ {
+  "id": "mesaEsp",
+  "type": "length",
+  "value": "15 mm"
+ },
+ {
+  "id": "mesaFuroY",
+  "type": "length",
+  "value": "190 mm"
+ },
+ {
+  "id": "preFuroMdf",
+  "type": "length",
+  "value": "3.2 mm"
+ },
+ {
+  "id": "fazMesaMdf",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "baseEsp",
+  "type": "length",
+  "value": "15 mm"
+ },
+ {
+  "id": "suporteEixoX",
+  "type": "length",
+  "value": "190 mm"
+ },
+ {
+  "id": "motorX",
+  "type": "length",
+  "value": "230 mm"
+ },
+ {
+  "id": "mancalFusoX",
+  "type": "length",
+  "value": "-90 mm"
+ },
+ {
+  "id": "fazBaseMdf",
+  "type": "bool",
+  "value": false
+ },
+ {
+  "id": "eixoComp",
+  "type": "length",
+  "value": "400 mm"
+ },
+ {
+  "id": "fusoComp",
+  "type": "length",
+  "value": "300 mm"
+ },
+ {
+  "id": "soReferencias",
+  "type": "bool",
+  "value": true
+ },
+ {
+  "id": "correiaZ",
+  "type": "length",
+  "value": "45 mm"
+ },
+ {
+  "id": "poliaY",
+  "type": "length",
+  "value": "165 mm"
+ },
+ {
+  "id": "fazPonteY",
+  "type": "bool",
+  "value": false
+ }
+]

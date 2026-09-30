@@ -1,0 +1,7 @@
+[
+  { "id": "parafuso", "type": "enum", "value": "M4", "enumName": "ParafusoExemplo" },
+  { "id": "largura", "type": "length", "value": "40 mm" },
+  { "id": "altura", "type": "length", "value": "20 mm" },
+  { "id": "espessura", "type": "length", "value": "6 mm" },
+  { "id": "comAba", "type": "bool", "value": true }
+]
