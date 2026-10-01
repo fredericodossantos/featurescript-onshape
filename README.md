@@ -46,6 +46,7 @@ exclui `.env`).
 | `onshape_inspect.py` | **reescrito sem teste** (o original se perdeu). Conferir uma peça conhecida no primeiro uso |
 | `idioma-comprovado.fs` | funções auxiliares vêm do .fs da mesa XY (regenera OK); o feature de exemplo **ainda não foi regenerado** no Onshape |
 | `exemplos-reais/mesa-xy/mesa_xy_*.fs` | cópias locais de 2026-09-23. Ainda não foram comparadas com o que está no Onshape e há warnings pendentes |
+| `exemplos-reais/mesa-xy/suporte_celular.fs` | montagem do suporte do celular: quadro de metalon, selas, barras, garras e o celular de referência. **Regenera OK no Onshape** (2026-10-01). Exemplo de montagem no lugar, num Part Studio só, e de peças espelhadas com `sx` |
 | `exemplos-reais/mesa-xy/trilhos_placa.fs` | trilhos da placa de controle no MDF: **regenera OK no Onshape** (2026-10-01). Exemplo de par espelhado, de cunha por rotação e de braço flexível (armadilhas 19 a 22) |
 
 Documento Onshape da mesa XY:

@@ -1,0 +1,20 @@
+[
+  { "id": "tuboLargura", "type": "length", "value": "20 mm" },
+  { "id": "tuboAltura", "type": "length", "value": "20 mm" },
+  { "id": "folgaTubo", "type": "length", "value": "0.4 mm" },
+  { "id": "diaBarra", "type": "length", "value": "8.2 mm" },
+  { "id": "diaBarraSela", "type": "length", "value": "7.9 mm" },
+  { "id": "entreBarras", "type": "length", "value": "60 mm" },
+  { "id": "furoRosca", "type": "length", "value": "5 mm" },
+  { "id": "abertura", "type": "length", "value": "14 mm" },
+  { "id": "janela", "type": "length", "value": "40 mm" },
+  { "id": "quadroX", "type": "length", "value": "535 mm" },
+  { "id": "quadroY", "type": "length", "value": "385 mm" },
+  { "id": "quadroZ", "type": "length", "value": "210 mm" },
+  { "id": "comprimentoBarra", "type": "length", "value": "700 mm" },
+  { "id": "posX", "type": "length", "value": "0 mm" },
+  { "id": "posY", "type": "length", "value": "0 mm" },
+  { "id": "celularLargura", "type": "length", "value": "75 mm" },
+  { "id": "celularComprimento", "type": "length", "value": "160 mm" },
+  { "id": "celularEspessura", "type": "length", "value": "9 mm" }
+]
