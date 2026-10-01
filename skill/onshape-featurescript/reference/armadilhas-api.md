@@ -55,6 +55,33 @@ validadas contra a API real.
 18. **Layout do Part Studio com vagas fixas** (`const VAGA`). Cursor corrido
     empurra as pecas seguintes quando entra peca nova e a montagem passa a
     apontar para o lugar errado (ja saiu 90 mm fora).
+19. **"Boolean operation would result in non-manifold body"**: depois dos cortes,
+    dois solidos se tocam so por uma aresta. Isso acontece quando dois cortes se
+    encontram numa aresta e deixam material em quadrantes diagonais. Caso real
+    (`trilhos_placa.fs`, 2026-10-01): o braco flexivel terminava em u = 0,5,
+    exatamente onde ficava a parede do fundo da fenda. Os cortes eram o vao
+    lateral (embaixo, a direita) e a fenda (em cima, a esquerda), e o braco e a
+    parede ficaram ligados so pela aresta.
+    - Regra: em toda aresta onde dois cortes se encontram, olhar os 4 quadrantes;
+      se houver material em diagonal, recuar uma das pecas (0,3 mm basta).
+    - O erro nao aponta a linha. Procurar coordenadas iguais entre cortes
+      diferentes.
+20. **Rampa ou cunha sem sketch** (comprovado em `trilhos_placa.fs`):
+    - fazer um `fCuboid` do dente e outro do cortador, com a face de baixo do
+      cortador passando pela linha de pivo;
+    - girar o cortador com
+      `opTransform(..., {"bodies": q, "transform": rotationAround(line(ponto * millimeter, vector(1, 0, 0)), atan(alt / comp))})`;
+    - subtrair o cortador do dente.
+
+    `atan(numero)` ja devolve angulo.
+21. **Detalhe que precisa ficar dentro de um vao cortado** (como um dente dentro
+    da fenda): cortar o corpo primeiro e unir o detalhe depois, em duas chamadas
+    de `combine`. O `combine` une antes de cortar, entao numa chamada so o corte
+    apaga o detalhe.
+22. **Par espelhado (direito e esquerdo)** (comprovado em `trilhos_placa.fs`):
+    - uma funcao de bloco em coordenada local `u` com sinal `sx` = +1 ou -1;
+    - ordenar com `min`/`max` por eixo antes do `fCuboid`;
+    - chamar a mesma funcao de peca duas vezes.
 
 ## Eixos (convencao usada nos projetos)
 

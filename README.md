@@ -45,7 +45,8 @@ exclui `.env`).
 | `onshape_render.py` | generalizado a partir do script antigo; não rodado ainda |
 | `onshape_inspect.py` | **reescrito sem teste** (o original se perdeu). Conferir uma peça conhecida no primeiro uso |
 | `idioma-comprovado.fs` | funções auxiliares vêm do .fs da mesa XY (regenera OK); o feature de exemplo **ainda não foi regenerado** no Onshape |
-| `exemplos-reais/mesa-xy/*.fs` | cópias locais de 2026-09-23; ainda não comparadas com o que está no Onshape; warnings pendentes |
+| `exemplos-reais/mesa-xy/mesa_xy_*.fs` | cópias locais de 2026-09-23. Ainda não foram comparadas com o que está no Onshape e há warnings pendentes |
+| `exemplos-reais/mesa-xy/trilhos_placa.fs` | trilhos da placa de controle no MDF: **regenera OK no Onshape** (2026-10-01). Exemplo de par espelhado, de cunha por rotação e de braço flexível (armadilhas 19 a 22) |
 
 Documento Onshape da mesa XY:
 <https://cad.onshape.com/documents/ef2faa3446bb2591886d7fa9/w/e99d15a7af85fd99690a70fc/e/9304b9ba04e2ea59cc7bb5e9>

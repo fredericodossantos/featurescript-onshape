@@ -45,6 +45,9 @@ auxiliares comprovadas + feature minimo) e instancie com
   precisam de sobreposicao positiva (>= 0,5 mm); tangencia e FAIL. Ferramenta
   de corte tem que atravessar (margem de 1 mm).
 - `fCylinder` existe (`bottomCenter`/`topCenter`/`radius`).
+- Erro "non-manifold" sem linha: procurar aresta onde dois cortes se encontram e
+  deixam material em quadrantes diagonais; recuar uma peca 0,3 mm
+  (armadilha 19).
 - Guarda = `throw regenError("... qual parametro ajustar")`; sem `throw` e
   guarda morta.
 - Cada cota numa fonte so (funcao `cotas()`); pecas que se encaixam consomem

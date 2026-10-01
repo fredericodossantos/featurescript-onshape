@@ -1,0 +1,10 @@
+[
+  { "id": "placaLargura", "type": "length", "value": "100 mm" },
+  { "id": "placaComprimento", "type": "length", "value": "100 mm" },
+  { "id": "placaEspessura", "type": "length", "value": "1.5 mm" },
+  { "id": "folgaFenda", "type": "length", "value": "0.3 mm" },
+  { "id": "encaixe", "type": "length", "value": "3 mm" },
+  { "id": "larguraTrilho", "type": "length", "value": "14 mm" },
+  { "id": "alturaBase", "type": "length", "value": "5 mm" },
+  { "id": "mostrarPlaca", "type": "bool", "value": true }
+]
