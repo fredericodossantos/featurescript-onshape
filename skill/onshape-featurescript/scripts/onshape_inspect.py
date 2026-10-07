@@ -13,6 +13,7 @@ Custo: 1 chamada para listar elementos + 1 por Part Studio medido (leitura).
 REESCRITO em 2026-09-30: o original se perdeu com a maquina antiga. Mesmo formato
 de saida (os scripts de projeto, ex. reassentar.py, leem as linhas B), mas ainda
 NAO foi testado contra a API. Na primeira execucao, confira uma peca conhecida.
+2026-10-07: "var box" dava erro de parse (box e palavra reservada em FeatureScript); virou "caixa".
 
 Credenciais: ONSHAPE_ACCESS_KEY / ONSHAPE_SECRET_KEY no ambiente.
 Header Accept = application/json puro (a variante com qs=0.09 da 404 em rotas validas).
@@ -39,9 +40,9 @@ function(context is Context, queries is map)
     {
         var b = bodies[i];
         var nome = getProperty(context, { "entity" : b, "propertyType" : PropertyType.NAME });
-        var box = evBox3d(context, { "topology" : b, "tight" : true });
-        var mn = box.minCorner / millimeter;
-        var mx = box.maxCorner / millimeter;
+        var caixa = evBox3d(context, { "topology" : b, "tight" : true });   // "box" e palavra reservada
+        var mn = caixa.minCorner / millimeter;
+        var mx = caixa.maxCorner / millimeter;
         var vol = evVolume(context, { "entities" : b }) / (millimeter ^ 3);
         out = out ~ "B|" ~ i ~ "|" ~ nome ~ "|" ~ mn[0] ~ "," ~ mn[1] ~ "," ~ mn[2]
                   ~ "|" ~ mx[0] ~ "," ~ mx[1] ~ "," ~ mx[2] ~ "|" ~ vol ~ "\n";

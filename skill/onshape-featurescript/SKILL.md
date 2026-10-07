@@ -41,6 +41,8 @@ auxiliares comprovadas + feature minimo) e instancie com
   default no meio.
 - `&&`/`||`, sem ternario, sem function dentro de function, `var`, ASCII puro.
 - Enum de parametro: `export enum` + `annotation` em cada valor.
+- Parametro mudou de sentido ou de default: **id novo** (`_b`, `_c`...); o Onshape
+  guarda o valor salvo e ignora o default novo de um id que ja existe.
 - UNION: so `tools` (alvo dentro do `qUnion`), sem `targets`. Corpos unidos
   precisam de sobreposicao positiva (>= 0,5 mm); tangencia e FAIL. Ferramenta
   de corte tem que atravessar (margem de 1 mm).

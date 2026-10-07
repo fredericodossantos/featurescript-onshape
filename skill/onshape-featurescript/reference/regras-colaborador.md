@@ -66,6 +66,11 @@ import(path : "onshape/std/properties.fs", version : "3083.0");
 - `&&` e `||`; sem ternario `? :`; sem `function` dentro de function.
 - Comentarios e strings em ASCII puro; um unico `FeatureScript N;` no topo; um
   unico `Feature Type Name` principal.
+- **Parametro que muda de sentido ou de default ganha id novo** (`imaAltura` ->
+  `imaAltura_b`, depois `_c`...). Nunca reusar o id com valor novo: o feature que ja
+  existe no Onshape guarda o valor salvo, e o default novo so vale para id novo. Com o
+  id trocado nao precisa avisar o usuario. (Regra do usuario, 2026-10-07: um berco saiu
+  impresso com o bolso do ima antigo porque `imaAltura` manteve o 8 salvo.)
 
 ## 5. Geometria antes do codigo
 
