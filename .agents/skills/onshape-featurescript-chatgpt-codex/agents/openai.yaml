@@ -1,0 +1,3 @@
+interface:
+  display_name: "Onshape FeatureScript"
+  short_description: "Crie e depure modelos FeatureScript no Onshape"

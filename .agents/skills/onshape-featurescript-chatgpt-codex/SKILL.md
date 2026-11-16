@@ -35,14 +35,16 @@ status de qualquer script ou exemplo.
 
 ## Antes de escrever codigo
 
-1. Leia `reference/regras-colaborador.md` (regras do usuario - valem sempre).
-2. Leia `reference/armadilhas-api.md` (cada item custou um ciclo de debug).
-3. Leia `reference/idioma-comprovado.fs` e o .fs do projeto que sera alterado,
-   inteiro. Se o projeto tiver HANDOFF/SPEC com cotas, leia a parte relevante.
-   Se usar um exemplo real daqui, leia o arquivo completo e respeite o estado
-   de verificacao registrado em `reference/estado-verificacao.md`; nao chame
-   copia, comentario ou medida contra STL de regeneracao confirmada no Onshape.
-4. Primeira resposta em ate 10 linhas: geometria entendida, arquivo de
+1. Leia [regras do colaborador](reference/regras-colaborador.md) (regras do
+   usuario - valem sempre) e [armadilhas da API](reference/armadilhas-api.md)
+   (cada item custou um ciclo de debug).
+2. Leia [o modelo FeatureScript](reference/idioma-comprovado.fs) e o .fs do
+   projeto que sera alterado, inteiro. Se o projeto tiver HANDOFF/SPEC com
+   cotas, leia a parte relevante. Se usar um exemplo real daqui, leia o arquivo
+   completo e respeite [o estado de verificacao](reference/estado-verificacao.md);
+   nao chame copia, comentario ou medida contra STL de regeneracao confirmada
+   no Onshape.
+3. Primeira resposta em ate 10 linhas: geometria entendida, arquivo de
    referencia, estrategia, se ha boolean, como verificar sobreposicao, nome do
    arquivo novo (ou edicao do existente, se o usuario pediu), se usara a API.
    Depois aja - nao fique planejando.
